@@ -21,24 +21,18 @@ void setup() {
 }
 
 void loop() {
-
   digitalWrite(trigPin, LOW);
-
   delayMicroseconds(5);
   digitalWrite(trigPin, HIGH);
   delayMicroseconds(10);
   digitalWrite(trigPin, LOW);
-
   sure = pulseIn(echoPin, HIGH, 11600);
   uzaklik = sure * 0.0345 / 2;
   delay(250);
 
- 
   if (uzaklik != oncekiUzaklik) {
     lcd.setCursor(0, 1); 
-  
     lcd.print("            ");
- 
     lcd.setCursor(0, 1);
     lcd.print(uzaklik); // Yeni mesafeyi yazdır
     lcd.print(" cm"); 
